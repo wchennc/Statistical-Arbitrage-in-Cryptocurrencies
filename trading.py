@@ -2,44 +2,6 @@ import numpy as np
 import pandas as pd
 import scipy.optimize as sco
 from sklearn.linear_model import LogisticRegression  # For ML-based signal weighting
-'''
-1. Enhanced Signal Generation
-1.1 Added dynamic thresholding for mean reversion
-1.2 Improved momentum calculation with smoothing
-1.3 Multiple combination methods (volatility scaling, ML weighting)
-
-2. Realistic Backtesting
-2.1 Volatility-scaled position sizing
-2.2 Slippage modeling
-2.3 Maximum leverage constraints
-2.4 Additional performance metrics (Sortino ratio, Calmar ratio, win rate)
-
-3. Advanced Portfolio Optimization
-3.1 Multiple optimization methods (Max Sharpe, Risk Parity, Min Variance)
-3.2 Regularized covariance matrix estimation
-3.3 More robust optimization settings
-
-4. Risk Management
-4.1 Dynamic position sizing based on volatility
-4.2 Maximum leverage constraints
-4.3 Drawdown-based metrics
-
-5. Machine Learning Integration
-5.1 Logistic regression for signal weighting
-5.2 Uses forward-looking returns (properly shifted) for training
-
-6. Numerical Stability
-6.1 Better handling of division by zero
-6.2 More stable cumulative return calculation
-6.3 Regularization in covariance matrix
-
-7. To use this effectively:
-7.1 Consider adding walk-forward optimization
-7.2 Implement regime filters (e.g., volatility regimes)
-7.3 Add transaction cost tiers based on trade size
-7.4 Incorporate fundamental data filters
-7.5 Add event-driven risk management (circuit breakers)
-'''
 
 def mean_reversion(df, window, threshold=1.0):
     """Enhanced mean reversion with dynamic thresholding"""
